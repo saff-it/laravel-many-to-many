@@ -22,7 +22,7 @@
                     </a>
                     
                 </td>
-                <td>{{$post->user()->name}}</td>
+                <td>{{$post->user->name}}</td>
                 <td>{{$post -> post_date}}</td>
                 <td>{{$post -> post_content}}</td>
                 <td><button> <a href="{{route('admin.posts.edit', $post->id)}}"> Edit</a></button></td>

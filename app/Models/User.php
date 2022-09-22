@@ -41,6 +41,8 @@ class User extends Authenticatable
     //     return $this->hasOne('App\Models\UserDetail');
     // }
 
+    public $timestamps = false;
+
     public function posts(){
         return $this->hasMany('App\Models\Admin\Post');
     }

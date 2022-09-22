@@ -19,8 +19,8 @@
     @csrf
 
     <div class="col-md-6">
-        <label for="input-author" class="form-label">Author</label>
-        <input type="text" class="form-control" id="author" name="author">
+        <label for="input-user_id" class="form-label">Author</label>
+        <input type="text" class="form-control" id="user_id" name="user_id">
       </div>
   
       <div class="col-md-6">

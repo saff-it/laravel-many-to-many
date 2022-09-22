@@ -14,6 +14,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        $myUser = new User();
+        $myUser->name = 'Simone S';
+        $myUser->email = 'simonesaffiotti@gmail.com';
+        $myUser->password = 'abcabc123';
+        $myUser->save();
+
+
         for ($i=0; $i < 10; $i++) { 
             $user = new User();
             $user->name = $faker->userName();
