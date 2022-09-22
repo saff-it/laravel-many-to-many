@@ -55,8 +55,8 @@ class PostController extends Controller
             ]
         );
 
-        $data['user_id'] = Auth::id();
-        $data['post_date'] = new DateTime();
+        $dataInput['user_id'] = Auth::id();
+        $dataInput['post_date'] = new DateTime();
 
         // $post = new Post();
         // $post -> user_id = $dataInput['user_id']; 
@@ -64,9 +64,9 @@ class PostController extends Controller
         // $post-> post_content = $dataInput['post_content'];
         // $post -> post_date = $dataInput['post_date']; 
 
-        Post::create($data);
+        Post::create($dataInput);
 
-        return redirect()->route('admin.posts.show', compact('post'));
+        return redirect()->route('admin.posts.index');
     }
 
     /**
