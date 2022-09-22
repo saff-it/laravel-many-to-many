@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Post;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,13 +45,26 @@ class PostController extends Controller
     {
         $dataInput = $request ->all();
 
-        $post = new Post();
-        // $post -> author = $dataInput['author']; 
-        $post -> title = $dataInput['title']; 
-        $post-> post_content = $dataInput['post_content'];
-        $post -> post_date = $dataInput['post_date']; 
+        $request->validate(
+            [
+                'title' =>[
+                    'min:3',
+                    'required',
+                ],
+                'post_content' => 'min:3|required',
+            ]
+        );
 
-        $post -> save();
+        $data['user_id'] = Auth::id();
+        $data['post_date'] = new DateTime();
+
+        // $post = new Post();
+        // $post -> user_id = $dataInput['user_id']; 
+        // $post -> title = $dataInput['title']; 
+        // $post-> post_content = $dataInput['post_content'];
+        // $post -> post_date = $dataInput['post_date']; 
+
+        Post::create($data);
 
         return redirect()->route('admin.posts.show', compact('post'));
     }
