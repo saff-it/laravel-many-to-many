@@ -45,7 +45,7 @@ class PostController extends Controller
         $dataInput = $request ->all();
 
         $post = new Post();
-        $post -> author = $dataInput['author']; 
+        // $post -> author = $dataInput['author']; 
         $post -> title = $dataInput['title']; 
         $post-> post_content = $dataInput['post_content'];
         $post -> post_date = $dataInput['post_date']; 
