@@ -1,10 +1,8 @@
 <?php
 
-use App\Models\Admin\Post;
-use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
-class TagPostTableSeeder extends Seeder
+class PostTagTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
