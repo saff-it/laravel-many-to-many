@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Admin\Post;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
 class PostTagTableSeeder extends Seeder
