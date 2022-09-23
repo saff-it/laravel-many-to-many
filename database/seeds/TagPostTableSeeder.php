@@ -24,6 +24,5 @@ class TagPostTableSeeder extends Seeder
             }
           
         }
-
     }
 }
