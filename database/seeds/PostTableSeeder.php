@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Admin\Post;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
@@ -13,6 +14,8 @@ class PostTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        $tags = Tag::all();
+
         for ($i=0; $i < 25; $i++) { 
             $newPost = new Post();
             $newPost->user_id = rand(1, 11);
