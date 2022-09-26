@@ -58,7 +58,7 @@ class PostController extends Controller
 
         $dataInput['user_id'] = Auth::id();
         $dataInput['post_date'] = new DateTime();
-        $img_path = Storage::put('', $dataInput['image']);
+        $dataInput['post_image'] = Storage::put('', $dataInput['post_image']);
 
         // $post = new Post();
         // $post -> user_id = $dataInput['user_id']; 

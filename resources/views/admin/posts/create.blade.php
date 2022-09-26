@@ -15,18 +15,22 @@
     
   @endif
 
-  <form action="{{ route('admin.posts.store')}}" method="POST" class="row g-3" enctype="multipart/form-data>
+  <form action="{{ route('admin.posts.store')}}" method="POST" class="row g-3" enctype="multipart/form-data">
     @csrf
-
-    {{-- <div class="col-md-6">
-        <label for="input-author" class="form-label">Author</label>
-        <input type="text" class="form-control" id="author" name="author">
-      </div> --}}
   
       <div class="col-md-6">
           <label for="input-title" class="form-label">Title</label>
           <input type="text" name="title" id="title" class="form-control">
-        </div>
+      </div>
+
+      <div class="col-md-6">
+        @if (filter_var($post->post_image, FILTER_VALIDATE_URL))
+            <img class="w-50" src="{{ $post->post_image}}" alt="image">
+        @else
+            <img class="w-50" src="{{ asset('/storage') . '/' . $post->post_image}}" alt="image">
+        @endif
+
+      </div>
   
       <div class="col-12">
         <label for="input-post_content" class="form-label">Post Content</label>
