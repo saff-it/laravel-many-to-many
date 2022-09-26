@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ route('admin.posts.update', $post->id)}}" method="POST" class="row g-3">
+<form action="{{ route('admin.posts.update', $post->id)}}" method="POST" class="row g-3" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
