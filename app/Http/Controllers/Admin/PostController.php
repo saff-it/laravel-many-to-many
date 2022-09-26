@@ -7,6 +7,7 @@ use App\Models\Admin\Post;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -57,6 +58,7 @@ class PostController extends Controller
 
         $dataInput['user_id'] = Auth::id();
         $dataInput['post_date'] = new DateTime();
+        $img_path = Storage::put('', $dataInput['image']);
 
         // $post = new Post();
         // $post -> user_id = $dataInput['user_id']; 
